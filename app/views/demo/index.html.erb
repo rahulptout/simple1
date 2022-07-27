@@ -1,0 +1,10 @@
+<h1>Demo#index</h1>
+<p>Find me in app/views/demo/index.html.erb</p>
+<h1>This is index file and this render by hello</h1>
+<% var=5+5 %>
+<%= var %><br/>
+<a href = "/demo/hello">hello page</a><br/>
+<%= link_to('hello page open with ruby',{:controller => 'demo',:action => 'hello'}) %>
+<%= @array.each do |n|  %>
+<%= n %> <br/>
+<% end %>
