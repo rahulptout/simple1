@@ -7,7 +7,7 @@ class ChangeUsers < ActiveRecord::Migration[7.0]
   #   add_index("admin_users","username")
   #
   # end
-
+  #
   # def down
   #   remove_index("admin_users","username")
   #
