@@ -1,5 +1,5 @@
 class CreateSubjects < ActiveRecord::Migration[7.0]
-  def up
+  def change
     create_table :subjects do |t|
       t.string "name"
       t.string "position"
