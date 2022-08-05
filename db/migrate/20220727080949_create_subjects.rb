@@ -8,9 +8,9 @@ class CreateSubjects < ActiveRecord::Migration[7.0]
     end
   end
 
-  def down
-    drop_table :subjects
-  end
+  # def down
+  #   drop_table :subjects
+  # end
 
   end
 
