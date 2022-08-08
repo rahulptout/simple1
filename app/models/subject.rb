@@ -25,14 +25,25 @@ class Subject < ApplicationRecord
       self.name = name.capitalize if name.blank?
     end
 
-  # before_validation :normalize_name, on: :create
+  before_validation :normalize_name, on: :create
+  before_validation :remove_whitespaces, on: :create
   before_save {self.name = name.downcase }
-  # private
-  # # def normalize_name
-  # #   self.name = name.downcase.titleize
-  # #   # self.name = name.upcase.titleize
-  # # end
+  private
+  # def normalize_name
+  #   self.name = name.downcase.titleize
+  #   self.name = name.upcase.titleize
+  # end
+  def remove_whitespaces
+    name.strip!
+  end
 
+  after_destroy :log_destroy_action
+
+  def log_destroy_action
+    puts 'subject destroyed'
+  end
+
+  enum
 
 end
 
