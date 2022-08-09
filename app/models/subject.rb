@@ -43,7 +43,35 @@ class Subject < ApplicationRecord
     puts 'subject destroyed'
   end
 
-  enum
+#  class method
+  def self.class_method_name
+    puts 'this class method'
+  end
+  #  instance method
+
+  def instance_method
+    puts 'this instance method'
+
+  end
+  #scope
+  scope :in_print, -> { where(out_of_print:true)}
+  scope :out_of_print, -> { where(out_of_print: true)}
+
+
+
+
+
+#  private method
+  private
+  def reset_attribute(attribute)
+    send("#{attribute}=", 0)
+  end
+
+  protected
+  def Protected_method
+    puts 'this is a protected message'
+  end
+
 
 end
 

@@ -53,9 +53,29 @@ class SubjectsController < ApplicationController
     redirect_to(subjects_path)
   end
 
+  def method_show
+    @subject = Subject.new()
+    # binding.pry
+    puts Subject.class_method_name
+    # puts .instance_method
+  
+
+    # @subject= Subject.private_methods
+    # @subject=Subject.Protected_method
+
+
+    # render body: "raw"
+    # render file: "#{Rails.root}/public/404.html", layout: true
+    # render template: "feed", content_type: "application/rss"
+
+  end
+
   private
   def subject_params
     params.required(:subject).permit(:name,:position,:visible)
   end
+
+
+
 
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'section/edit'
   get 'section/delete'
   root 'demo#index'
+  get 'subjects/method_show'
   resources :subjects do
     member do
       get :delete
