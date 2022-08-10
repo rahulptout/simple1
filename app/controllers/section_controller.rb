@@ -12,8 +12,23 @@ class SectionController < ApplicationController
   end
 
   def edit
+    @section = Section.find(params[:id])
   end
+
+  def update
+    @section = Section.find(params[:id])
+    if @section.update(section_params)
+      redirect_to(@section)
+    else
+      render :edit
+    end
+
+    end
 
   def delete
   end
+  private
+
+
 end
+

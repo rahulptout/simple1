@@ -1,2 +1,10 @@
-<h1>Section#edit</h1>
-<p>Find me in app/views/section/edit.html.erb</p>
+<%= link_to("BACK TO LIST", subjects_path, :class =>'back-link')%>
+<div class="section new">
+  <h1>Update Subject</h1>
+  <%= form_for(@section,:url => subject_path(@section),:method => 'patch')do |f| %>
+    <%= render(:partial => 'form',:locals => {:f => f }) %>
+    <div class="form-buttons">
+      <%= f.submit("Update Section") %>
+    </div>
+  <%end%>
+</div>

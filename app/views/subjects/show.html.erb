@@ -1,7 +1,12 @@
+<%= stylesheet_link_tag "main" %>
+<%= javascript_include_tag "main" %>
+<%= javascript_tag '' %>
+<h1><%= @subject.name_space %></h1>
 
 
+ 
 <%= link_to("BACK TO LIST", subjects_path, :class => 'back-link')%>
-<div class="sujects show">
+<div class="subjects show">
   <h1>Show Subject</h1>
   <table summary="Subject detail view">
     <tr>
@@ -32,3 +37,5 @@
     </tr>
   </table>
 </div>
+<button id="myBtn">Try it</button>
+

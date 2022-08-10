@@ -12,7 +12,7 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    @subject =Subject.new({:name =>'Default'})
+    @subject = Subject.new({:name =>'Default'})
   end
 
   def create
@@ -54,9 +54,9 @@ class SubjectsController < ApplicationController
   end
 
   def method_show
-    @subject = Subject.new()
+    # @subject = Subject.new()
     # binding.pry
-    puts Subject.class_method_name
+    # puts Subject.class_method_name
     # puts .instance_method
   
 
@@ -67,6 +67,10 @@ class SubjectsController < ApplicationController
     # render body: "raw"
     # render file: "#{Rails.root}/public/404.html", layout: true
     # render template: "feed", content_type: "application/rss"
+    # render json: @subjects
+   # render status: 500
+   # render status: :forbidden
+   #  render variants: [:mobile, :desktop]
 
   end
 
@@ -74,7 +78,6 @@ class SubjectsController < ApplicationController
   def subject_params
     params.required(:subject).permit(:name,:position,:visible)
   end
-
 
 
 

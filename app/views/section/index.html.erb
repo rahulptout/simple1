@@ -11,20 +11,21 @@
       <th>Subject</th>
       <th>Visible</th>
       <th>Pages</th>
-      <th>Acton</th>
+      <th>Action</th>
     </tr>
-    <%@subjects.each do |subject | %>
+    <%@sections.each do |section | %>
       <tr>
-        <td><%= subject.position %></td>
-        <td><%= subject.name %></td>
-        <td class="center"><%= subject.visible ? 'Yes': 'No' %></td>
-        <td class="center"><%= subject.pages.size%></td>
-        <td class = "action">
+        <td><%= section.position %></td>
+        <td><%= section.name %></td>
+        <td class="center"><%= section.visible ? 'Yes': 'No' %></td>
+        <td class="center"><%= section.pages.size%></td>
 
-          <%=link_to("Show",{:controller => 'subjects',:action => 'show',:id =>subject.id } ,:class=>'acton show')%>
-          <%=link_to("Delete",delete_subject_path(subject.id),:class=>'acton delete') %>
-          <%=link_to("Edit",edit_subject_path(subject.id),:class=>'acton delete')%>
+        <td class = "action">
+          <%=link_to("Show",{:controller => 'section',:action => 'show',:id =>section.id } ,:class=>'action show')%>
+          <%=link_to("Delete",delete_subject_path(section.id),:class=>'action delete') %>
+          <%=link_to("Edit",edit_subject_path(section.id),:class=>'action delete')%>
         </td>
+
       </tr>
     <% end %>
   </table>

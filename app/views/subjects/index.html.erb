@@ -1,7 +1,7 @@
+<%= stylesheet_link_tag "main" %>
 
 
 <div class="subjects index">
-
   <h1>Subjects</h1>
   <%= link_to("Add new Subject", 'subjects/new',:class => 'action new')%>
 
@@ -12,22 +12,28 @@
       <th>Subject</th>
       <th>Visible</th>
       <th>Pages</th>
-      <th>Acton</th>
+      <th>Action</th>
+      <th>name_space</th>
     </tr>
     <%@subjects.each do |subject | %>
       <tr>
-        <td><%= subject.id %> ----- </td>
+        <td><%= subject.id %></td>
         <td><%= subject.position %></td>
         <td><%= subject.name %></td>
         <td class="center"><%= subject.visible ? 'Yes': 'No' %></td>
         <td class="center"><%= subject.pages.size%></td>
+
         <td class = "action">
 
           <%=link_to("Show",{:controller => 'subjects',:action => 'show',:id =>subject.id } ,:class=>'acton show')%>
           <%=link_to("Delete",delete_subject_path(subject.id),:class=>'acton delete') %>
           <%=link_to("Edit",edit_subject_path(subject.id),:class=>'acton delete')%>
         </td>
+        
+
       </tr>
       <% end %>
   </table>
 </div>
+
+

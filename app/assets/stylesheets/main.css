@@ -1,0 +1,10 @@
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+
+a:hover {
+    background-color: yellow;
+}
