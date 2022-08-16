@@ -39,3 +39,19 @@
 </div>
 <button id="myBtn">Try it</button>
 
+<%= radio_button_tag(:age, "child") %>
+<%= label_tag(:age_child, "I am younger than 21") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "I'm over 21") %>
+<h1 id="demo">Mouse over me</h1>
+
+<%= label_tag(:q, "Search for:") %>
+<%= text_field_tag(:q) %>
+<%= submit_tag("Search") %>
+
+<%= button_tag "Save", :id => 'btn'   %>
+<p id="demo"></p>
+
+
+<%= javascript_include_tag "main" %>
+
