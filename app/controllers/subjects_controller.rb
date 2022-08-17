@@ -12,6 +12,7 @@ class SubjectsController < ApplicationController
   end
 
   def new
+    # binding.pry
     @subject = Subject.new({:name =>'Default'})
   end
 

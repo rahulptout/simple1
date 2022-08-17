@@ -1,0 +1,44 @@
+<%= stylesheet_link_tag "main" %>
+
+
+<div class="subjects index">
+  <h1>Subjects</h1>
+  <%= link_to("Add new Subject", '/logindata/new',:class => 'action new')%>
+
+  <td>
+  <table class="listing" summary="Subject list">
+    <tr class="header">
+      <th>id</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>date_of_birth</th>
+      <th>password</th>
+      <th>created_at</th>
+      <th>updated_at</th>
+
+    </tr>
+    <%@logins.each do |data | %>
+      <tr>
+        <td><%= data.id %></td>
+        <td><%= data.first_name %></td>
+        <td><%= data.last_name %></td>
+        <td><%= data.email %></td>
+        <td><%= data.date_of_birth%></td>
+        <td><%= data.password%></td>
+        <td><%= data.created_at%></td>
+        <td><%= data.updated_at%></td>
+        <td>
+          <%= link_to("Add new Subject", '/logindata/new',:class => 'action new')%>
+          <%=link_to("Show",{:controller => 'logindata',:action => 'show',:id =>data.id } ,:class=>'action show')%>
+          <%=link_to("Delete",delete_subject_path(data.id),:class=>'acton delete') %>
+          <%=link_to("Edit",edit_subject_path(data.id),:class=>'action delete')%>
+        </td>
+
+
+      </tr>
+  <% end %>
+  </table>
+</div>
+
+

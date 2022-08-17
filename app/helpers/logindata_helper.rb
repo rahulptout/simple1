@@ -1,0 +1,2 @@
+module LogindataHelper
+end

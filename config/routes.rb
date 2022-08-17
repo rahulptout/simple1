@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  resources :logindata do
+    member do
+      get :delete
+    end
+  end
+
   get 'section/index'
   get 'section/show'
   get 'section/new'
